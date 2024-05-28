@@ -22,7 +22,9 @@ def jugar(jugador, maquina):
 
 
 while 1:
+
     contestacionUsuario = input("JUEGO : Piedra, papel y tijera" + "\n" + "Quieres jugar? (s/n): ")
+    nombre = str(input("Dime tu nombre: "))
     if 's' in contestacionUsuario.lower():
         maquina = generarrandom()
         while True and 1 == 1:
@@ -38,7 +40,7 @@ while 1:
                     jugador = tijera
                 print(f"Elección del usuario: {jugador}")
                 if jugar(jugador, maquina) == 1 and 1 == jugar(jugador, maquina):
-                    print("Gana el usuario !!!")
+                    print(f"Gana {nombre} !!!")
                 elif jugar(jugador, maquina) == -1:
                     print("Gana el ordenador !!!")
                 elif jugar(jugador, maquina) == 0:
