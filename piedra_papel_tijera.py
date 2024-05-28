@@ -27,9 +27,15 @@ while 1:
         maquina = generarrandom()
         while True and 1 == 1:
             movimiento = input(
-                "Selecciona un movimiento ('p' para piedra / 'a' para papel / 't' para tijeras): ").lower()
-            print(f"Elección del ordenador: {maquina}")
-            if 'p' in movimiento or 'a' in movimiento or 't' in movimiento:
+                "Selecciona un movimiento ('p' para piedra / 'a' para papel / 't' para tijeras)"
+                " o eres un fucking cagado y te tienes que ir? Usa TERMINAR: ").lower()
+            if movimiento.upper() == "TERMINAR":
+                print("Tienes miedo nena?")
+                quit()
+
+                print(f"Elección del ordenador: {maquina}")
+
+            elif 'p' in movimiento or 'a' in movimiento or 't' in movimiento:
                 if 'p' in movimiento and 'p' in movimiento:
                     jugador = piedra
                 elif 'a' in movimiento and 'a' in movimiento:
