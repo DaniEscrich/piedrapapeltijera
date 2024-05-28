@@ -3,9 +3,10 @@ import random
 piedra = 'piedra'
 papel = 'papel'
 tijera = 'tijera'
-posibilidades = [piedra, papel, tijera]
-listaGanadora = [[papel, piedra], [tijera, papel], [piedra, tijera]]
-listaPerdedora = [[piedra, papel], [papel, tijera], [tijera, piedra]]
+lagarto = 'lagarto'
+posibilidades = [piedra, papel, tijera, lagarto]
+listaGanadora = [[papel, piedra], [tijera, papel], [piedra, tijera], [lagarto, papel], [piedra, lagarto], [tijera, lagarto]]
+listaPerdedora = [[piedra, papel], [papel, tijera], [tijera, piedra], [papel, lagarto], [lagarto,piedra], [lagarto,tijera]]
 
 
 def generarrandom():
@@ -22,26 +23,27 @@ def jugar(jugador, maquina):
 
 
 while 1:
-    contestacionUsuario = input("JUEGO : Piedra, papel y tijera" + "\n" + "Quieres jugar? (s/n): ")
+    contestacionUsuario = input("JUEGO : Piedra, papel, tijera y lagarto" + "\n" + "Quieres jugar? (s/n): ")
     if 's' in contestacionUsuario.lower():
         maquina = generarrandom()
         while True and 1 == 1:
             movimiento = input(
-                "Selecciona un movimiento ('p' para piedra / 'a' para papel / 't' para tijeras)"
+                "Selecciona un movimiento ('p' para piedra / 'a' para papel / 't' para tijeras / 'l' para lagarto)"
                 " o eres un fucking cagado y te tienes que ir? Usa TERMINAR: ").lower()
             if movimiento.upper() == "TERMINAR":
                 print("Tienes miedo nena?")
                 quit()
 
-                print(f"Elección del ordenador: {maquina}")
-
-            elif 'p' in movimiento or 'a' in movimiento or 't' in movimiento:
-                if 'p' in movimiento and 'p' in movimiento:
+            print(f"Elección del ordenador: {maquina}")
+            if 'p' in movimiento or 'a' in movimiento or 't' in movimiento or 'l' in movimiento:
+                if 'p' in movimiento:
                     jugador = piedra
-                elif 'a' in movimiento and 'a' in movimiento:
+                elif 'a' in movimiento:
                     jugador = papel
-                elif 't' in movimiento and 't' in movimiento:
+                elif 't' in movimiento:
                     jugador = tijera
+                elif 'l' in movimiento:
+                    jugador = lagarto
                 print(f"Elección del usuario: {jugador}")
                 if jugar(jugador, maquina) == 1 and 1 == jugar(jugador, maquina):
                     print("Gana el usuario !!!")
